@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>قائمة الطلب - كاشير</title>
+<style>
+  body { font-family: Arial, sans-serif; direction: rtl; padding: 20px; background: #f9f9f9; }
+  h1 { text-align: center; }
+  h2 { margin-top: 30px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+  .item { display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 10px; margin-bottom: 5px; border-radius: 5px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+  .buttons { display: flex; align-items: center; }
+  button { width: 30px; height: 30px; margin: 0 5px; font-size: 16px; }
+  .total { font-weight: bold; margin-top: 20px; font-size: 20px; text-align: center; background: #fff; padding: 10px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+</style>
+</head>
+<body>
+<h1>قائمة الطلب</h1>
+
+<h2>برجر</h2>
+<div class="item">
+  <span>كول سلو - 28 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('coleslaw', -1)">−</button>
+    <span id="coleslawQty">0</span>
+    <button onclick="changeQty('coleslaw', 1)">+</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>ميبل - 29 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('maple', -1)">−</button>
+    <span id="mapleQty">0</span>
+    <button onclick="changeQty('maple', 1)">+</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>كلاسيك - 26 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('classic', -1)">−</button>
+    <span id="classicQty">0</span>
+    <button onclick="changeQty('classic', 1)">+</button>
+  </div>
+</div>
+
+<h2>أصناف جانبية</h2>
+<div class="item">
+  <span>ستريبس 6 حبات - 28 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('strips6', -1)">−</button>
+    <span id="strips6Qty">0</span>
+    <button onclick="changeQty('strips6', 1)">+</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>ستريبس 3 حبات - 16 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('strips3', -1)">−</button>
+    <span id="strips3Qty">0</span>
+    <button onclick="changeQty('strips3', 1)">+</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>بايتس 8 حبات - 16 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('bites8', -1)">−</button>
+    <span id="bites8Qty">0</span>
+    <button onclick="changeQty('bites8', 1)">+</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>بايتس 4 حبات - 8 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('bites4', -1)">−</button>
+    <span id="bites4Qty">0</span>
+    <button onclick="changeQty('bites4', 1)">+</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>لودد فرايز - 22 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('loaded', -1)">−</button>
+    <span id="loadedQty">0</span>
+    <button onclick="changeQty('loaded', 1)">+</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>فرايز - 7 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('fries', -1)">−</button>
+    <span id="friesQty">0</span>
+    <button onclick="changeQty('fries', 1)">+</button>
+  </div>
+</div>
+
+<h2>صوص</h2>
+<div class="item">
+  <span>رانش صوص - 3 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('ranch', -1)">−</button>
+    <span id="ranchQty">0</span>
+    <button onclick="changeQty('ranch', 1)">+</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>تشكيند صوص - 3 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('chikind', -1)">−</button>
+    <span id="chikindQty">0</span>
+    <button onclick="changeQty('chikind', 1)">+</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>تشيز صوص - 5 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('cheese', -1)">−</button>
+    <span id="cheeseQty">0</span>
+    <button onclick="changeQty('cheese', 1)">+</button>
+  </div>
+</div>
+
+<h2>مشروبات</h2>
+<div class="item">
+  <span>كولا - 4 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('cola', -1)">−</button>
+    <span id="colaQty">0</span>
+    <button onclick="changeQty('cola', 1)">+</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>سبرايت - 4 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('sprite', -1)">−</button>
+    <span id="spriteQty">0</span>
+    <button onclick="changeQty('sprite', 1)">+</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>ماء - 2 ريال</span>
+  <div class="buttons">
+    <button onclick="changeQty('water', -1)">−</button>
+    <span id="waterQty">0</span>
+    <button onclick="changeQty('water', 1)">+</button>
+  </div>
+</div>
+
+<div class="total">
+  المجموع: <span id="total">0</span> ريال
+</div>
+
+<script>
+let items = {
+  coleslaw: {price: 28, qty: 0},
+  maple: {price: 29, qty: 0},
+  classic: {price: 26, qty: 0},
+  strips6: {price: 28, qty: 0},
+  strips3: {price: 16, qty: 0},
+  bites8: {price: 16, qty: 0},
+  bites4: {price: 8, qty: 0},
+  loaded: {price: 22, qty: 0},
+  fries: {price: 7, qty: 0},
+  ranch: {price: 3, qty: 0},
+  chikind: {price: 3, qty: 0},
+  cheese: {price: 5, qty: 0},
+  cola: {price: 4, qty: 0},
+  sprite: {price: 4, qty: 0},
+  water: {price: 2, qty: 0},
+};
+
+function changeQty(name, delta) {
+  items[name].qty += delta;
+  if (items[name].qty < 0) items[name].qty = 0;
+  document.getElementById(name + 'Qty').textContent = items[name].qty;
+  updateTotal();
+}
+
+function updateTotal() {
+  let total = 0;
+  for (let key in items) {
+    total += items[key].price * items[key].qty;
+  }
+  document.getElementById('total').textContent = total;
+}
+</script>
+
+</body>
+</html>
